@@ -1,0 +1,22 @@
+{
+  "name": "express_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon service/index.js",
+    "start": "node service/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "convict": "^4.3.2",
+    "express": "^4.16.3",
+    "neo4j-driver": "^1.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
