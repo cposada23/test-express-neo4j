@@ -9,47 +9,48 @@ const fs = require('fs')
 // Define a schema
 var config = convict({
   env: {
-    doc: "The application environment.",
-    format: ["production", "development", "test"],
-    default: "development",
-    env: "NODE_ENV"
+    doc: 'The application environment.',
+    format: ['production', 'development', 'test'],
+    default: 'development',
+    env: 'NODE_ENV'
   },
   port: {
-    doc: "The port to bind.",
-    format: "port",
+    doc: 'The port to bind.',
+    format: 'port',
     default: 8080,
-    env: "PORT",
-    arg: "port"
+    env: 'PORT',
+    arg: 'port'
   },
   db: {
     host: {
-      doc: "Database host name/IP",
+      doc: 'Database host name/IP',
       format: '*',
-      default: '192.168.99.100'
+      default: '192.168.99.100',
+      env: 'DB_HOST'
     },
     user: {
-      doc: "Database userrname",
+      doc: 'Database userrname',
       format: String,
       default: 'neo4j',
       env: 'DB_USER'
     },
     password: {
-      doc: "Database password",
+      doc: 'Database password',
       format: String,
       default: 'test',
       env: 'DB_PASSWORD'
     }
   }
-});
+})
 
 // Load environment dependent configuration
-var env = config.get('env');
+var env = config.get('env')
 const envFile = './config/' + env + '.json'
 if (fs.existsSync(envFile)) {
-    config.loadFile(envFile);
+  config.loadFile(envFile)
 }
 
 // Perform validation
-config.validate({ allowed: 'strict' });
+config.validate({ allowed: 'strict' })
 
-module.exports = config;
+module.exports = config

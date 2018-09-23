@@ -6,17 +6,21 @@
   "scripts": {
     "dev": "nodemon service/index.js",
     "start": "node service/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --fix"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "convict": "^4.3.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
+    "express-validator": "^5.3.0",
     "neo4j-driver": "^1.6.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "standard": "^12.0.1"
   }
 }
